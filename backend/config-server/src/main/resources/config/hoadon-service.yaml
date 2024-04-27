@@ -1,0 +1,34 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: hoadon-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/quanlyrapphim_hoadon
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+application:
+  config:
+    ves-url: http://localhost:8060/api/ves
+    dichvus-url: http://localhost:8060/api/dichvus
+    thanhviens-url: http://localhost:8060/api/thanhviens
+    emailservice-url: http://localhost:8060/api/emails
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
